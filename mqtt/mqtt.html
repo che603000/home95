@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
+</head>
+<body>
+
+<canvas id="popChart" width="600" height="400"></canvas>
+
+<script>
+    const {mqtt: {connect}, Chart} = window;
+
+
+    const chartTemp = (items) => {
+        var chartOptions = {
+            legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                    boxWidth: 80,
+                    fontColor: 'black'
+                }
+            },
+            //responsive: true,
+            maintainAspectRatio: false,
+        };
+        var speedData = {
+            labels: items.map(item => new Date(item.t * 1000).toISOString()),
+            //labels: items.map(item => item.t *1000),
+            datasets: [{
+                label: "CPU temp",
+                data: items.map(item => item.v),
+                fill: false,
+                borderColor: 'red',
+                pointRadius: 0,  // <<< Here.
+                backgroundColor: 'transparent',
+                lineWidth: '1px',
+                pointStyle: 'rectRounded'
+            }],
+
+        };
+        const lineChart = new Chart(document.getElementById('popChart'), {
+            type: 'line',
+            data: speedData,
+            options: chartOptions
+        });
+    };
+
+
+    const clientId = 'myApp';
+
+    const temperatureTopic = `/rpc/v1/db_logger/history/get_values/contactless-${clientId}`;
+
+    const client = connect('ws://192.168.1.108:18883/mqtt', {clientId});
+
+    const createId = () => Math.random() * 1000 | 0;
+
+    const getTemperatureCPU = (params) => {
+        const id = createId();
+        client.publish(temperatureTopic, JSON.stringify({
+            id,
+            params: {
+                limit: 1000,
+                ver: 1,
+                min_interval: 0,
+                ...params
+            }
+        }));
+        return id;
+    };
+
+    client.on('connect', () => {
+        client.subscribe(`${temperatureTopic}/reply/#`, (err) => {
+            if (err)
+                debugger;
+        });
+
+        const params = {
+            "channels": [["hwmon", "CPU Temperature"]],
+            "timestamp": {"gt": Date.parse('2019-07-01T00:00Z') / 1000, "lt": Date.now() / 1000 | 0},
+        };
+        getTemperatureCPU(params);
+
+    });
+
+    client.on('error', err => {
+        console.log(err);
+    });
+
+    client.on('message', function (topic, message) {
+        const o = JSON.parse(message.toString());
+        console.log({topic, ...o});
+        chartTemp(o.result.values);
+    });
+</script>
+
+
+</body>
+</html>
