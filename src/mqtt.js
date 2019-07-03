@@ -30,7 +30,7 @@ client.on('connect', () => {
     });
 
     const params = {
-        "channels": [["wb-w1", "28-011831bb08ff"]],
+        "channels": [["wb-w1", "28-011831b b08ff"]],
         "timestamp": {"gt": Date.parse('2019-06-29') / 1000, "lt": Date.parse('2019-07-01') / 1000}
     };
     getTemperature(params);

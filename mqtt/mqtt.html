@@ -14,10 +14,13 @@
 
 <script>
     const {mqtt: {connect}, Chart} = window;
+    const IP = '192.168.1.108';
+    const clientId = 'myAppHome';
+    const temperatureTopic = `/rpc/v1/db_logger/history/get_values/contactless-${clientId}`;
 
-
+    const createId = () => Math.random() * 1000 | 0;
     const chartTemp = (items) => {
-        var chartOptions = {
+        const chartOptions = {
             legend: {
                 display: true,
                 position: 'top',
@@ -29,9 +32,8 @@
             //responsive: true,
             maintainAspectRatio: false,
         };
-        var speedData = {
+        const speedData = {
             labels: items.map(item => new Date(item.t * 1000).toISOString()),
-            //labels: items.map(item => item.t *1000),
             datasets: [{
                 label: "CPU temp",
                 data: items.map(item => item.v),
@@ -44,23 +46,13 @@
             }],
 
         };
-        const lineChart = new Chart(document.getElementById('popChart'), {
+        new Chart(document.getElementById('popChart'), {
             type: 'line',
             data: speedData,
             options: chartOptions
         });
     };
-
-
-    const clientId = 'myApp';
-
-    const temperatureTopic = `/rpc/v1/db_logger/history/get_values/contactless-${clientId}`;
-
-    const client = connect('ws://192.168.1.108:18883/mqtt', {clientId});
-
-    const createId = () => Math.random() * 1000 | 0;
-
-    const getTemperatureCPU = (params) => {
+    const temperatureCPU = (rangeDate) => {
         const id = createId();
         client.publish(temperatureTopic, JSON.stringify({
             id,
@@ -68,24 +60,22 @@
                 limit: 1000,
                 ver: 1,
                 min_interval: 0,
-                ...params
+                channels: [["hwmon", "CPU Temperature"]],
+                timestamp: {lt: rangeDate[1] / 1000 | 0, gt: (Date.parse(rangeDate[0]) || Date.now()) / 1000}
             }
         }));
         return id;
     };
 
+    const client = connect(`ws://${IP}:18883/mqtt`, {clientId});
+
     client.on('connect', () => {
         client.subscribe(`${temperatureTopic}/reply/#`, (err) => {
             if (err)
-                debugger;
+                console.error(err);
+            else
+                temperatureCPU(['2019-07-01T00:00Z']);
         });
-
-        const params = {
-            "channels": [["hwmon", "CPU Temperature"]],
-            "timestamp": {"gt": Date.parse('2019-07-01T00:00Z') / 1000, "lt": Date.now() / 1000 | 0},
-        };
-        getTemperatureCPU(params);
-
     });
 
     client.on('error', err => {
