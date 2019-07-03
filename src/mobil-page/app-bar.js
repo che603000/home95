@@ -84,7 +84,7 @@ export default () => {
                     >
 
                         <MenuItem onClick={handleClose} component={Link} to="/">Main</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/home">Temp</MenuItem>
+                        <MenuItem onClick={handleClose} component={Link} to="/home">Погода</MenuItem>
                         <MenuItem onClick={handleClose} component={Link} to="/waterings">Авто полив</MenuItem>
 
                     </Menu>
