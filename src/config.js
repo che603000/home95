@@ -25,6 +25,7 @@ export const waterings = [
     }
 ];
 
+//waterings areas
 export const AREAS =[
     {
         id: 1,
@@ -42,4 +43,6 @@ export const AREAS =[
         id: 4,
         name: 'Капельный полив'
     },
-]
+];
+
+//export  const

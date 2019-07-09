@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import store from './store';
 
 import AppBar from './mobil-page/app-bar';
-import Temp from './mobil-page/temperature';
+import Temp from './mobil-page/weather';
 //import Card from './mobil-page/card';
 import Edit from './mobil-page/watering-edit';
 import WateringList from './mobil-page/watering-list';

@@ -14,7 +14,7 @@
 
 <script>
     const {mqtt: {connect}, Chart} = window;
-    const IP = '192.168.1.108';
+    const IP = '192.168.1.35';
     const clientId = 'myAppHome';
     const temperatureTopic = `/rpc/v1/db_logger/history/get_values/contactless-${clientId}`;
 
@@ -53,18 +53,22 @@
         });
     };
     const temperatureCPU = (rangeDate) => {
-        const id = createId();
-        client.publish(temperatureTopic, JSON.stringify({
-            id,
+        const options = {
+            id: createId(),
             params: {
-                limit: 1000,
+                limit: 10000,
                 ver: 1,
-                min_interval: 0,
+                min_interval: 1000*60,
                 channels: [["hwmon", "CPU Temperature"]],
-                timestamp: {lt: rangeDate[1] / 1000 | 0, gt: (Date.parse(rangeDate[0]) || Date.now()) / 1000}
+                timestamp: {
+                    lt: Date.parse(rangeDate[1]) / 1000,
+                    gt: (Date.parse(rangeDate[0]) || Date.now()) / 1000
+                }
             }
-        }));
-        return id;
+        };
+        console.log(options);
+        client.publish(temperatureTopic, JSON.stringify(options));
+        return options.id;
     };
 
     const client = connect(`ws://${IP}:18883/mqtt`, {clientId});
@@ -74,7 +78,7 @@
             if (err)
                 console.error(err);
             else
-                temperatureCPU(['2019-07-01T00:00Z']);
+                temperatureCPU(['2019-07-09T00:00Z', '2019-07-10T00:00Z']);
         });
     });
 
