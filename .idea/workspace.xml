@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca9668de-48ba-403c-8192-ac4e6e9eca2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/weather.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/weather.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/mqtt.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mqtt/mqtt.html" beforeDir="false" afterPath="$PROJECT_DIR$/mqtt/mqtt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/consts/action-name.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/action-name.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobil-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobil-app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobil-page/temperature.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobil-page/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mqtt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mobil-page/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobil-page/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mobil-page/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobil-page/weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/mqtt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mqtt.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +28,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mobil-page/weather.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+            <state relative-caret-position="255">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#221#464#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mqtt/mqtt.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="34" column="21" selection-start-line="34" selection-start-column="7" selection-end-line="45" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -42,12 +50,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/weather.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="436">
+              <caret line="52" column="8" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="11" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#145#343#0" />
-                <element signature="e#391#589#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+              <folding>
+                <element signature="e#25#464#0" />
+                <element signature="e#505#738#0" />
               </folding>
             </state>
           </provider>
@@ -56,20 +75,63 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="255">
+              <caret line="18" column="45" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/mqtt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#Mqtt#0" />
+                <element signature="e#525#996#0" />
+                <element signature="n#!!block;n#start#0;n#Mqtt#0" />
+                <element signature="e#279#553#0" />
+                <element signature="e#668#743#0" />
+                <element signature="e#990#1262#0" />
+                <element signature="e#988#1355#0" />
+                <element signature="n#!!block;n#isHistory#0;n#Mqtt#0" />
+                <element signature="e#2928#3160#0" />
+                <element signature="n#!!block;n#messageHistory#1;n#Mqtt#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/weather.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#120#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/actions/weather.js">
+        <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#0#99#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="75" column="54" lean-forward="true" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -77,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/consts/action-name.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="85">
+              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -101,6 +163,7 @@
       <find>var</find>
       <find>MenuIcon</find>
       <find>open</find>
+      <find>this.topics</find>
     </findStrings>
     <replaceStrings>
       <replace>const</replace>
@@ -122,7 +185,6 @@
         <option value="$PROJECT_DIR$/mqtt/index.js" />
         <option value="$PROJECT_DIR$/mqtt/index.css" />
         <option value="$PROJECT_DIR$/src/mobil-page/temperature.js" />
-        <option value="$PROJECT_DIR$/src/mobil-page/card.js" />
         <option value="$PROJECT_DIR$/src/pages/watering-list.js" />
         <option value="$PROJECT_DIR$/src/mobil-app.js" />
         <option value="$PROJECT_DIR$/src/actions/watering.js" />
@@ -131,26 +193,28 @@
         <option value="$PROJECT_DIR$/src/mobil-page/watering-list.js" />
         <option value="$PROJECT_DIR$/src/mobil-page/app-bar.js" />
         <option value="$PROJECT_DIR$/mqtt/mqtt.html" />
-        <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/actions/temperature.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/reducers/temperature.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/mqtt.js" />
-        <option value="$PROJECT_DIR$/src/utils/mqtt.js" />
-        <option value="$PROJECT_DIR$/src/consts/action-name.js" />
-        <option value="$PROJECT_DIR$/src/mobil-page/weather.js" />
-        <option value="$PROJECT_DIR$/src/reducers/weather.js" />
+        <option value="$PROJECT_DIR$/src/mobil-page/card.js" />
+        <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/consts/action-name.js" />
+        <option value="$PROJECT_DIR$/src/reducers/weather.js" />
+        <option value="$PROJECT_DIR$/src/utils/mqtt.js" />
+        <option value="$PROJECT_DIR$/src/mobil-page/weather.js" />
         <option value="$PROJECT_DIR$/src/actions/weather.js" />
+        <option value="$PROJECT_DIR$/build/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-6" />
+    <option name="y" value="-12" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -171,25 +235,7 @@
             <path>
               <item name="home95" type="b2602c69:ProjectViewProjectNode" />
               <item name="home95" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="home95" type="b2602c69:ProjectViewProjectNode" />
-              <item name="home95" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="home95" type="b2602c69:ProjectViewProjectNode" />
-              <item name="home95" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mobil-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="home95" type="b2602c69:ProjectViewProjectNode" />
-              <item name="home95" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -211,6 +257,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -275,12 +322,21 @@
       <workItem from="1561735955731" duration="15334000" />
       <workItem from="1561963948582" duration="12821000" />
       <workItem from="1562072362488" duration="26995000" />
-      <workItem from="1562699608075" duration="8722000" />
+      <workItem from="1562699608075" duration="8779000" />
+      <workItem from="1562788014981" duration="14059000" />
     </task>
+    <task id="LOCAL-00001" summary="temperature">
+      <created>1562708372191</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562708372191</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63872000" />
+    <option name="totallyTimeSpent" value="77988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -308,6 +364,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="temperature" />
+    <option name="LAST_COMMIT_MESSAGE" value="temperature" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,17 +399,6 @@
           <caret line="2" column="11" lean-forward="true" selection-end-line="49" />
           <folding>
             <element signature="e#465#1932#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mobil-page/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#1393#5257#0" />
           </folding>
         </state>
       </provider>
@@ -401,49 +450,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
-          <folding>
-            <element signature="e#25#464#0" />
-            <element signature="e#487#720#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt/mqtt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="97" />
-          <folding>
-            <element signature="e#754#1729#0" />
-            <element signature="e#1773#2332#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mqtt/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="4" lean-forward="true" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -469,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/mqtt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#107#317#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/watering.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -496,49 +496,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/consts/action-name.js">
+    <entry file="file://$PROJECT_DIR$/src/components/card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/weather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#145#343#0" />
-            <element signature="e#391#589#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mobil-page/weather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="493">
+          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mobil-page/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#3361#5256#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="e#25#464#0" />
+            <element signature="e#505#738#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="255">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/mqtt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#Mqtt#0" />
+            <element signature="e#525#996#0" />
+            <element signature="n#!!block;n#start#0;n#Mqtt#0" />
+            <element signature="e#279#553#0" />
+            <element signature="e#668#743#0" />
+            <element signature="e#990#1262#0" />
+            <element signature="e#988#1355#0" />
+            <element signature="n#!!block;n#isHistory#0;n#Mqtt#0" />
+            <element signature="e#2928#3160#0" />
+            <element signature="n#!!block;n#messageHistory#1;n#Mqtt#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/weather.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mqtt/mqtt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="7" selection-end-line="45" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mobil-page/weather.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#221#464#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/consts/action-name.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="153">
+          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
           <folding>
-            <element signature="e#0#99#0" expanded="true" />
+            <element signature="e#0#120#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="75" column="54" lean-forward="true" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
         </state>
       </provider>
     </entry>

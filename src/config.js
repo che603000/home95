@@ -45,4 +45,9 @@ export const AREAS =[
     },
 ];
 
+export const mqtt  ={
+    connectString :'ws://192.168.1.35:18883/mqtt',
+    clientId :'homeApp'
+};
+
 //export  const

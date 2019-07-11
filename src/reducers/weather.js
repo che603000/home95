@@ -1,8 +1,18 @@
 import {combineReducers} from 'redux';
-import {TEMPERATURE_CHANGE_VALUE, HUMIDITY_CHANGE_VALUE, BATTERY_LOW} from "../consts/action-name";
+import {TEMPERATURE_CHANGE_VALUE, HUMIDITY_CHANGE_VALUE, BATTERY_LOW, TEMPERATURE_HISTORY} from "../consts/action-name";
 
 
-const temperature = (state = "?", action) => {
+const history = (state = [], action) => {
+    const {type, payload = {}} = action;
+
+    switch (type) {
+        case TEMPERATURE_HISTORY: {
+            return payload.values;
+        }
+        default:
+            return state;
+    }
+};const temperature = (state = "?", action) => {
     const {type, payload = {}} = action;
 
     switch (type) {
@@ -40,5 +50,6 @@ const batteryLow = (state = false, action) => {
 export default combineReducers({
     temperature,
     humidity,
+    history,
     batteryLow
 });
