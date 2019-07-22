@@ -56,7 +56,7 @@ export default () => {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        Photos
+                        HOME CHE
                     </Typography>
                     <IconButton
                         aria-label="Account of current user"

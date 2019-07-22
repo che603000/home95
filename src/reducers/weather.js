@@ -12,7 +12,7 @@ const history = (state = [], action) => {
         default:
             return state;
     }
-};const temperature = (state = "?", action) => {
+};const temperature = (state = null, action) => {
     const {type, payload = {}} = action;
 
     switch (type) {
@@ -23,7 +23,7 @@ const history = (state = [], action) => {
             return state;
     }
 };
-const humidity = (state = 0, action) => {
+const humidity = (state = null, action) => {
     const {type, payload = {}} = action;
 
     switch (type) {

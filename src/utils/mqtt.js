@@ -1,5 +1,5 @@
 import {connect} from 'mqtt';
-import {mqtt} from '../config'
+import {mqtt} from '../config';
 
 const createId = () => Math.random() * 1000 | 0;
 
@@ -108,7 +108,6 @@ class Mqtt {
 
 
 }
-
 
 export default new Mqtt(mqtt);
 

@@ -1,15 +1,22 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {TEMP_HISTORY} from '../config'
 import {makeStyles} from '@material-ui/core/styles';
 import {temperatureHistory} from '../actions/weather';
-import {Line, Bar} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
-import {Card, CardContent, Typography, Divider, Paper} from '@material-ui/core'
+import {BottomNavigation, BottomNavigationAction, Card, CardContent, Typography} from '@material-ui/core'
+
+import Icon from '@material-ui/core/Icon';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const useStyles = makeStyles({
     card: {
         minWidth: 275,
-        border: 'none'
+        border: 'none',
+        height:'100%'
     },
     bullet: {
         display: 'inline-block',
@@ -24,19 +31,35 @@ const useStyles = makeStyles({
     },
 });
 
+
+const HumidityView = props => {
+    const {className, value, batteryLow} = props;
+    if (value)
+        return (
+            <Typography className={className} color="textSecondary" gutterBottom>
+                Влажность: {value}%. {batteryLow ? " Батарея LOW !!!" : ""}
+            </Typography>
+        )
+    else
+        return null;
+
+}
+
 function SimpleCard(props) {
     const classes = useStyles();
-    const {temperature, humidity, history, batteryLow} = props;
+    const {temperature, humidity, history = [], batteryLow} = props;
+    const minDate = history[0] ? history[0].date : new Date();
+
     const data = {
-        labels: history.map((item, index) => {
-            if (index % 4 === 0)
-                return item.key;
-            else
-                return "";
-        }),
+        // labels: history.map((item, index) => {
+        //     if (index % 4 === 0)
+        //         return item.key;
+        //     else
+        //         return "";
+        // }),
         datasets: [{
-            label: "Значение темп. за 24H",
-            data: history.map(item => item.value),
+            label: "Температура:",
+            data: history.map(item => ({x: item.date, y: item.value})),
             fill: false,
             borderColor: 'red',
             pointRadius: 0,  // <<< Here.
@@ -48,34 +71,52 @@ function SimpleCard(props) {
     };
     const options = {
         maintainAspectRatio: false,
-        // scales: {
-        //     xAxes: [{
-        //         ticks: {
-        //             //min: -22,
-        //             //max: 0,
-        //
-        //             // forces step size to be 5 units
-        //             stepSize: 6
-        //         }
-        //     }]
-        // },
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    min: minDate,
+                    unit: 'hour',
+                    displayFormats: {
+                        minute: 'HH:mm',
+                        hour: 'DD/MM HH:mm'
+                    }
+                },
+                display: true,
+                color: '#F66',
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Time'
+                },
+                ticks: {
+                    maxRotation: 0,
+                    minRotation: 0,
+                    major: {
+                        fontStyle: 'bold',
+                        //fontColor: '#FF0000'
+                    }
+                }
+            }],
+        },
+        tooltips: {
+            intersect: false,
+            mode: 'index'
+        }
 
     };
-    return (
-        <div>
-            <Card className={classes.card}>
-                <CardContent>
 
+
+    return (
+        <div className={"app-page"}>
+            {/*<Card className={classes.card}>*/}
+            {/*    <CardContent>*/}
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                         Температура на улице
                     </Typography>
                     <Typography variant="h2" component="h1">
-                        {temperature}&deg;C
+                        {temperature && temperature.toFixed(1)}&deg;C
                     </Typography>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        Влажность: {humidity}%. {batteryLow ? " Батарея LOW !!!" : ""}
-                    </Typography>
-
+                    <HumidityView value={humidity} batteryLow={batteryLow} className={classes.title}/>
                     <hr/>
                     <div>
                         <Line
@@ -86,8 +127,15 @@ function SimpleCard(props) {
                             options={options}
                         />
                     </div>
-                </CardContent>
-            </Card>
+            {/*    </CardContent>*/}
+
+            {/*</Card>*/}
+            {/*<BottomNavigation value={0} onChange={handleChange} className={classes.root}>*/}
+            {/*    <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon/>}/>*/}
+            {/*    <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon/>}/>*/}
+            {/*    <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon/>}/>*/}
+            {/*    <BottomNavigationAction label="Folder" value="folder" icon={<Icon>folder</Icon>}/>*/}
+            {/*</BottomNavigation>*/}
 
             {/*<Card className={classes.card}>*/}
             {/*    <CardContent>*/}
@@ -117,7 +165,7 @@ function SimpleCard(props) {
 class Weather extends React.Component {
     componentDidMount() {
         const {temperatureHistory} = this.props;
-        temperatureHistory();
+        temperatureHistory(TEMP_HISTORY);
     }
 
     render() {
